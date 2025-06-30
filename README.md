@@ -2,17 +2,9 @@
 
 This is an automated installation script for setting up Autodesk FBX SDK 2020.3.2 and its Python bindings on Linux. It also installs the required SIP dependency and builds the `fbx` Python module.
 
-## 📦 Features
-
-- Extracts and installs the FBX SDK  
-- Installs Python bindings  
-- Installs SIP 4.19.3 from a local archive  
-- Builds and installs the `fbx` Python module  
-- Supports Python 3.8 (can be modified for other versions)
-
 ## 📁 Required Files
-
-Download and place the following files in your target root directory (default: `~/Desktop/TEST`):  
+**Open the script FBX_SDK_Install.sh and customize target root directory (default: `~/Desktop/TEST`)**
+Download and place the following files in your target root directory: 
 [autodesk FBX SDK 202032](https://www.autodesk.com/developer-network/platform-technologies/fbx-sdk-2020-3.2)  
 ```
 fbx202032\_fbxsdk\_linux.tar.gz
