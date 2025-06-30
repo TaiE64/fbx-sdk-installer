@@ -1,6 +1,3 @@
-# fbx-sdk-installer
-Automated installer for Autodesk FBX SDK 2020.3.2 and Python bindings on Linux.
-
 # FBX SDK & Python Bindings Installer (Linux)
 
 This is an automated installation script for setting up Autodesk FBX SDK 2020.3.2 and its Python bindings on Linux. It also installs the required SIP dependency and builds the `fbx` Python module.
