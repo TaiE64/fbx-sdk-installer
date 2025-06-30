@@ -12,14 +12,13 @@ This is an automated installation script for setting up Autodesk FBX SDK 2020.3.
 
 ## 📁 Required Files
 
-Place the following files in your target root directory (default: `~/Desktop/TEST`):
-
-
-
+Download and place the following files in your target root directory (default: `~/Desktop/TEST`):  
+[autodesk FBX SDK 202032](https://www.autodesk.com/developer-network/platform-technologies/fbx-sdk-2020-3.2)  
+```
 fbx202032\_fbxsdk\_linux.tar.gz
 fbx202032\_fbxpythonbindings\_linux.tar.gz
 sip-4.19.3.tar.gz
-
+```
 
 
 ## 🛠️ Usage
