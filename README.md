@@ -1,29 +1,32 @@
 # FBX SDK & Python Bindings Installer (Linux)
 
-This is an automated installation script for setting up Autodesk FBX SDK 2020.3.2 and its Python bindings on Linux. It also installs the required SIP dependency and builds the `fbx` Python module.
+This is an automated installation script for setting up Autodesk FBX SDK 2020.3.2 and its Python bindings on Linux.  
+It also installs the required SIP dependency and builds the `fbx` Python module.
 
+---
+# Installation
+
+## ✅ Requirements
+  
+* Python 3.8 (recommended)
+* Ubuntu 20/22 LTS
+  
 ## 📁 Required Files
-**Open the script FBX_SDK_Install.sh and customize target root directory (default: `~/Desktop/TEST`)**
-Download and place the following files in your target root directory: 
+**Open the script FBX_SDK_Install.sh and customize target root directory (ROOT_DIR) (default: `~/Desktop/TEST`)**  
+Download and place the following files in your target root directory:  
 [autodesk FBX SDK 202032](https://www.autodesk.com/developer-network/platform-technologies/fbx-sdk-2020-3.2)  
+[sip==4.19.3 archive file download](https://sourceforge.net/projects/pyqt/files/sip/sip-4.19.3/)
 ```
-fbx202032\_fbxsdk\_linux.tar.gz
-fbx202032\_fbxpythonbindings\_linux.tar.gz
+fbx202032_fbxsdk_linux.tar.gz
+fbx202032_fbxpythonbindings_linux.tar.gz
 sip-4.19.3.tar.gz
 ```
-
-
+  
 ## 🛠️ Usage
 
-
+```
 chmod +x FBX_SDK_Install.sh
 ./FBX_SDK_Install.sh
-
-
-The default installation path is:
-
-```
-~/Desktop/TEST/FBX
 ```
 
 The script performs:
@@ -36,29 +39,32 @@ The script performs:
 6. Makefile patching for proper library linking
 7. Compilation and installation of the `fbx.so` module
 
-## ✅ Requirements
+## ✅ Last Step
 
-* Python 3.8 (recommended)
-* `sudo` access
-* Linux system
-* Required packages: `build-essential`, `libxml2-dev`
+3 files will be generated under:
+$ROOT_DIR/FBX/FBXPythonBinding/build/Distrib/site-packages/fbx/  
 
-## 🧩 Environment Variables
+- `sip.so`  
+- `FbxCommon.py`  
+- `fbxsip.so`
 
-The script will export the following:
-
-```bash
-export FBXSDK_ROOT=~/Desktop/TEST/FBX/FBXSDK/
-export SIP_ROOT=~/Desktop/TEST/FBX/sip/sip-4.19.3
+You need to **manually copy** them to your Python environment's `site-packages` directory.  
+For example:  
 ```
+~/miniconda/envs/xxx/lib/python3.7/site-packages/sip.so  
+~/miniconda/envs/xxx/lib/python3.7/site-packages/FbxCommon.py  
+~/miniconda/envs/xxx/lib/python3.7/site-packages/fbxsip.so
+```
+## ✅ INSTALLATION FINISHED
 
-## 🔎 Verification
-
-After installation, test the Python module:
-
+You are now ready to use the FBX Python module 🎉  
+Run the test script to verify the installation:
 ```python
-import fbx
+import sys; sys.path.insert(0, "$ROOT_DIR/FBX/FBXPythonBinding/build/Distrib/site-packages/fbx")
+import fbx; print("✅" if fbx.FbxManager.Create() else "❌")
 ```
+
+---
 
 ## ⚠️ Notes
 
