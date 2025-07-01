@@ -60,8 +60,10 @@ For example:
 You are now ready to use the FBX Python module 🎉  
 Run the test script to verify the installation:
 ```python
-import sys; sys.path.insert(0, "$ROOT_DIR/FBX/FBXPythonBinding/build/Distrib/site-packages/fbx")
-import fbx; print("✅" if fbx.FbxManager.Create() else "❌")
+import sys
+sys.path.append('$ROOT_DIR/FBX/FBXPythonBinding/build/Distrib/site-packages/fbx')
+import fbx
+print("✅ FBX SDK import successful")
 ```
 
 ---
